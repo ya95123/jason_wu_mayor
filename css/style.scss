@@ -1,6 +1,13 @@
 // *Noto Sans TC
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
 
+$blue-major: #1ECFD6;
+$blue-second:#A5DEE4;
+$blue-third: #2EA9DF;
+$yellow: #EDD170;
+$brown: #C05640;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -15,4 +22,5 @@ body {
 }
 
 body{
+  background: linear-gradient(to bottom,$blue-second,$blue-third);
 }
