@@ -12,8 +12,8 @@
 <body>
   <div id="app">
     <section id="cards">
-      <div class="card">
-        
+      <div class="card" v-for="(item,idx) in data" :key="item.name">
+        {{item.name}}
       </div>
     </section>
   </div>
@@ -21,10 +21,33 @@
   <script>
     const { ref, reactive } = Vue
     const App = {
-
       setup() {
+        // cards data
+        const data = reactive([
+          {
+            name:"A"
+          },
+          {
+            name:"B"
+          },
+          {
+            name:"C"
+          },
+          {
+            name:"D"
+          },
+          {
+            name:"E"
+          },
+          {
+            name:"F"
+          },
+          {
+            name:"G"
+          }
+        ])
         return {
-
+          data
         }
       }
     }
