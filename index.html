@@ -11,49 +11,38 @@
 
 <body>
   <div id="app">
+    <!-- *首頁 -->
+    <section id="index">
+      <div class="mayorBox">
+        <!-- 圖 -->
+        <div id="mayor">
+          <div id="jason-img">
+            <img src="./img/jason.jpg">
+          </div>
+        </div>
+        <!-- 名 -->
+        <div id="jason-title">
+          <p>恭賀<br>俊昇區長</p>
+        </div>
+      </div>
+
+      <!-- shape -->
+      <svg v-for="(item,idx) in shapes" :key="item.color" class="shapes" viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill="#F2F4F899" :d="item.shape" transform="translate(100 100)" />
+      </svg>
+    </section>
+
+    <!-- *卡片 -->
     <section id="cards">
-      <div class="card" v-for="(item,idx) in data" :key="item.name">
+      <div v-for="(item,idx) in data" :key="item.name" class="card">
         {{item.name}}
         手裡最好加油名字表示湖北圖文在這個，工作之中刪除產權成人團結相關內容住了伺服器求購，電腦庫存標準報導同意，開發者大會練習一下子面對，感覺管理員台南渠道平方米毫不生產戰略是誰西方記得權力平均減少，出口意識主題花蓮手術異常明顯客服有的有着一年，參數稿件製作壓力不必兩人很有，此次皇帝住宅主演滿意演唱一名表明出席，最大一段收購平時環境其他更新，影視寬頻有些真是對你消失夢想，到了作品擴大能在彩色另一主席而言土地專輯有關部門，她是營養中文版政策本書留下老師有權處理，上了大多，魔法空調，玄幻朋友可以說，無比樓上其它每頁娛樂得知一笑登陸當年想像紀念，臺灣民眾回憶轉變解。
       </div>
     </section>
   </div>
   <script src="https://unpkg.com/vue@next"></script>
-  <script>
-    const { ref, reactive } = Vue
-    const App = {
-      setup() {
-        // cards data
-        const data = reactive([
-          {
-            name:"A"
-          },
-          {
-            name:"B"
-          },
-          {
-            name:"C"
-          },
-          {
-            name:"D"
-          },
-          {
-            name:"E"
-          },
-          {
-            name:"F"
-          },
-          {
-            name:"G"
-          }
-        ])
-        return {
-          data
-        }
-      }
-    }
-    Vue.createApp(App).mount("#app")
-  </script>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,11 +14,137 @@ body {
   height: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  background: #fff;
+  color: #C05640;
+}
+
+::selection {
+  background: #fff;
+  color: #C05640;
+}
+
 #app {
   width: 100%;
   height: auto;
   background: -webkit-gradient(linear, left top, left bottom, from(#A5DEE4), to(#2EA9DF));
   background: linear-gradient(to bottom, #A5DEE4, #2EA9DF);
+}
+
+#index {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#index .mayorBox {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#index #mayor {
+  width: 550px;
+  height: 550px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  cursor: -webkit-grab;
+  cursor: grab;
+  -webkit-animation: mayorIn 0.7s, mayorRotate 3.65s ease-in-out infinite;
+          animation: mayorIn 0.7s, mayorRotate 3.65s ease-in-out infinite;
+}
+
+#index #jason-img {
+  width: 525px;
+  height: 525px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-animation: fadeIn 2.5s;
+          animation: fadeIn 2.5s;
+}
+
+#index #jason-img img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.75s, -webkit-transform 0.75s;
+  transition: opacity 0.75s, -webkit-transform 0.75s;
+  transition: transform 0.75s, opacity 0.75s;
+  transition: transform 0.75s, opacity 0.75s, -webkit-transform 0.75s;
+}
+
+#index #jason-img img:hover {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  opacity: 0.93;
+}
+
+#index #jason-title {
+  margin: 16px 0 0 0;
+  text-align: center;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#index .shapes {
+  width: 250px;
+  max-width: 90%;
+  position: absolute;
+  -webkit-animation: fadeIn 3.5s;
+          animation: fadeIn 3.5s;
+}
+
+#index .shapes:nth-child(2) {
+  top: 5%;
+  left: 14%;
+}
+
+#index .shapes:nth-child(3) {
+  top: -2%;
+  left: 60%;
+}
+
+#index .shapes:nth-child(4) {
+  top: 10%;
+  left: 83%;
+}
+
+#index .shapes:nth-child(5) {
+  bottom: 14%;
+  left: 5%;
+}
+
+#index .shapes:nth-child(6) {
+  bottom: 5%;
+  left: 26%;
+}
+
+#index .shapes:nth-child(7) {
+  bottom: 7%;
+  right: 9%;
+}
+
+#index .shapes:nth-child(8) {
+  bottom: 35%;
+  right: 19%;
 }
 
 #cards {
@@ -31,13 +157,96 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  border: 7px solid #fff;
 }
 
-.card {
+#cards .card {
   width: 380px;
   max-width: 100%;
   height: 380px;
   margin: 1.2rem;
   background: #EDD170;
   letter-spacing: 2px;
+}
+
+@-webkit-keyframes mayorIn {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 550px;
+    height: 550px;
+    opacity: 1;
+  }
+}
+
+@keyframes mayorIn {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 550px;
+    height: 550px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mayorRotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  33% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  66% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes mayorRotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  33% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  66% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
