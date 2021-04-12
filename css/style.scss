@@ -34,6 +34,7 @@ body {
   width: 100%;
   height: auto;
   background: linear-gradient(to bottom, $blue-second, $blue-third);
+  overflow-x: hidden;
 }
 
 #index {
