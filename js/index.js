@@ -28,25 +28,53 @@ const App = {
     // cards data
     const data = reactive([
       {
-        name: "A"
+        name: "A",
+        img: "https://picsum.photos/800/1440/?random=1",
+        text: "",
+        hasVoice: "",
+        voice: ""
       },
       {
-        name: "B"
+        name: "B",
+        img: "https://picsum.photos/1920/1080/?random=1",
+        text: "",
+        hasVoice: "",
+        voice: ""
       },
       {
-        name: "C"
+        name: "C",
+        img: "https://picsum.photos/1440/768/?random=1",
+        text: "",
+        hasVoice: "",
+        voice: ""
       },
       {
-        name: "D"
+        name: "D",
+        img: "https://picsum.photos/1920/1080/?random=2",
+        text: "",
+        hasVoice: "",
+        voice: ""
       },
       {
-        name: "E"
+        name: "E",
+        img: "https://picsum.photos/1080/768/?random=2",
+        text: "",
+        hasVoice: "",
+        voice: ""
       },
       {
-        name: "F"
+        name: "F",
+        img: "https://picsum.photos/768/1440/?random=1",
+        text: "",
+        hasVoice: "",
+        voice: ""
       },
       {
-        name: "G"
+        name: "G",
+        img: "https://picsum.photos/1080/1920?random=1",
+        text: "",
+        hasVoice: "",
+        voice: ""
       }
     ])
     return {
