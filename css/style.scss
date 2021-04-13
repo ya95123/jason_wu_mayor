@@ -40,6 +40,10 @@ img {
   color: $brown;
 }
 
+.none {
+  display: none !important;
+}
+
 #app {
   width: 100%;
   height: auto;
@@ -194,6 +198,8 @@ img {
     border-bottom: 2px solid #fffd;
     text-shadow: 1px 1px 0px #fff;
     font-size: 40px;
+
+    animation: fadeIn 0.3s;
   }
 }
 

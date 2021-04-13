@@ -35,6 +35,10 @@ img {
   color: #C05640;
 }
 
+.none {
+  display: none !important;
+}
+
 #app {
   width: 100%;
   height: auto;
@@ -211,6 +215,8 @@ img {
   border-bottom: 2px solid #fffd;
   text-shadow: 1px 1px 0px #fff;
   font-size: 40px;
+  -webkit-animation: fadeIn 0.3s;
+          animation: fadeIn 0.3s;
 }
 
 @-webkit-keyframes mayorIn {

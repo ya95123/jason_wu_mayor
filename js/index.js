@@ -1,86 +1,13 @@
-const { ref, reactive } = Vue
-const App = {
-  setup() {
-    // shapes
-    const shapes = reactive([
-      {
-        shape: "M66.3,-38.8C76.3,-21,68,6.7,53.9,28.6C39.9,50.4,19.9,66.3,-2.7,67.9C-25.3,69.5,-50.7,56.7,-61.6,36.7C-72.5,16.7,-68.9,-10.5,-56.3,-29.9C-43.6,-49.3,-21.8,-60.8,3.2,-62.6C28.2,-64.5,56.4,-56.6,66.3,-38.8Z"
-      },
-      {
-        shape: "M66.4,-24.8C70.8,-8,48.6,14.1,25.4,29.7C2.3,45.3,-21.9,54.3,-36,45.1C-50.1,35.9,-54.3,8.4,-46.6,-12.8C-38.9,-34,-19.5,-49,5.8,-50.9C31,-52.7,62,-41.5,66.4,-24.8Z"
-      },
-      {
-        shape: "M68.2,-29.6C73.5,-5.7,52.8,19.3,28.9,35.6C5.1,52,-22,59.8,-39.9,48.3C-57.7,36.9,-66.4,6.3,-58.2,-21.6C-50,-49.4,-25,-74.5,3.2,-75.6C31.4,-76.6,62.8,-53.6,68.2,-29.6Z"
-      },
-      {
-        shape: "M46.3,-12.8C53.7,7.7,49,34.3,33.5,45.3C18,56.4,-8.2,51.9,-30.4,36.9C-52.7,21.9,-71,-3.5,-65.2,-21.8C-59.5,-40,-29.8,-51,-5.1,-49.3C19.5,-47.7,38.9,-33.3,46.3,-12.8Z"
-      },
-      {
-        shape: "M45.9,-29.4C60,-19.1,72,0.1,68.1,14.9C64.2,29.8,44.4,40.3,24.6,49.2C4.8,58,-15,65.1,-30.4,59.2C-45.9,53.3,-57,34.4,-58.7,16.5C-60.3,-1.5,-52.5,-18.5,-41.1,-28.2C-29.7,-37.9,-14.9,-40.3,0.5,-40.7C16,-41.2,31.9,-39.7,45.9,-29.4Z"
-      },
-      {
-        shape: "M34.9,25.3C21.6,43.2,-29.1,44.6,-41.1,27.4C-53.2,10.2,-26.6,-25.7,-1.2,-26.4C24.1,-27.1,48.2,7.3,34.9,25.3Z"
-      },
-      {
-        shape: "M19.4,0.2C25.2,11.3,29.8,29.3,18.2,41.6C6.6,54,-21.1,60.6,-30.2,51.6C-39.3,42.6,-29.8,18,-21.7,3.6C-13.6,-10.9,-6.8,-15.1,0,-15.1C6.9,-15.1,13.7,-10.9,19.4,0.2Z"
-      },
-    ])
-    // cards data
-    const data = reactive([
-      {
-        name: "A",
-        img: "https://picsum.photos/800/1440/?random=1",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      },
-      {
-        name: "B",
-        img: "https://picsum.photos/1920/1080/?random=1",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      },
-      {
-        name: "C",
-        img: "https://picsum.photos/1440/768/?random=1",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      },
-      {
-        name: "D",
-        img: "https://picsum.photos/1920/1080/?random=2",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      },
-      {
-        name: "E",
-        img: "https://picsum.photos/1080/768/?random=2",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      },
-      {
-        name: "F",
-        img: "https://picsum.photos/768/1440/?random=1",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      },
-      {
-        name: "G",
-        img: "https://picsum.photos/1080/1920?random=1",
-        text: "",
-        hasVoice: "",
-        voice: ""
-      }
-    ])
-    return {
-      data,
-      shapes
-    }
+const cards = document.querySelectorAll(".card")
+const names = document.querySelectorAll(".name")
+
+// *hover card
+cards.forEach((card, idx) => {
+  // 名字出現
+  card.onmouseover = () => {
+    names[idx].classList.remove("none")
   }
-}
-Vue.createApp(App).mount("#app")
+  card.onmouseout = () => {
+    names[idx].classList.add("none")
+  }
+})
