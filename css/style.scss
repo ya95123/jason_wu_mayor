@@ -44,6 +44,10 @@ img {
   display: none !important;
 }
 
+.height{
+  height: auto;
+}
+
 #app {
   width: 100%;
   height: auto;
@@ -198,6 +202,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     display: inline-block;
+    pointer-events: none;
 
     color: $blue-second;
     border-bottom: 2px solid #fffd;

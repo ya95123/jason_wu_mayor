@@ -187,6 +187,18 @@ const App = {
       // *card 
       cards.forEach((card, idx) => {
         let nameShow = true
+        let isClick = false
+        let toggleHeight
+
+        // *監聽卡片變化
+        // const toggleObserver = new ResizeObserver(() => {
+        //   if (isClick) {
+        //     // 已打開，所以可以直接抓取 content 內的高度
+        //     toggleHeight = card.scrollHeight
+        //     card.style.height = `${toggleHeight}px`
+        //   }
+        // })
+        // toggleObserver.observe(card)
 
         // *click 圖片消失
         imgs[idx].onclick = () => {
@@ -195,6 +207,18 @@ const App = {
 
           // 內容出現
           contents[idx].classList.remove("none")
+
+          // 自適高度
+          isClick = true
+          if(isClick){
+            toggleHeight = card.scrollHeight
+            card.style.height = `${toggleHeight+25}px`
+          }else{
+            card.style.height = "fit-content"
+          }
+
+
+          // card.style.height = `${toggleHeight}px`
         }
 
         // *hover 名字出現
@@ -216,12 +240,11 @@ const App = {
 
           // 內容消失
           contents[idx].classList.add("none")
+
+          // card
+          isClick = false
         }
       })
-
-      // backs.forEach((back, idx) => {
-
-      // })
     })
 
     return {

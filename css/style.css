@@ -39,6 +39,10 @@ img {
   display: none !important;
 }
 
+.height {
+  height: auto;
+}
+
 #app {
   width: 100%;
   height: auto;
@@ -216,6 +220,7 @@ img {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   display: inline-block;
+  pointer-events: none;
   color: #A5DEE4;
   border-bottom: 2px solid #fffd;
   text-shadow: 1px 1px 0px #fff;
