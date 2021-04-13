@@ -43,6 +43,7 @@ body {
 }
 
 #index .mayorBox {
+  max-width: 100%;
   position: absolute;
   z-index: 99;
   top: 50%;
@@ -103,6 +104,13 @@ body {
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 2px;
+  -webkit-animation: fadeIn 2.5s;
+          animation: fadeIn 2.5s;
+}
+
+#index #jason-title .em-partying_face {
+  width: 54px !important;
+  height: 54px !important;
 }
 
 #index .shapes {
@@ -249,5 +257,160 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1440px) {
+  #index .shapes {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #index .shapes {
+    width: 175px;
+  }
+  #index .shapes:nth-child(2) {
+    top: 5%;
+    left: 14%;
+  }
+  #index .shapes:nth-child(3) {
+    top: 0%;
+    left: 52%;
+  }
+  #index .shapes:nth-child(4) {
+    top: 10%;
+    left: 75%;
+  }
+  #index .shapes:nth-child(5) {
+    bottom: 14%;
+    left: 5%;
+  }
+  #index .shapes:nth-child(6) {
+    bottom: 5%;
+    left: 26%;
+  }
+  #index .shapes:nth-child(7) {
+    bottom: 7%;
+    right: 9%;
+  }
+  #index .shapes:nth-child(8) {
+    bottom: 25%;
+    right: 15%;
+  }
+}
+
+@media (max-width: 767px) {
+  #index #mayor {
+    width: 300px;
+    height: 300px;
+    -webkit-animation: fadeIn 0.7s, mayorRotate 3.65s ease-in-out infinite;
+            animation: fadeIn 0.7s, mayorRotate 3.65s ease-in-out infinite;
+  }
+  #index #jason-img {
+    width: 285px;
+    height: 285px;
+    -webkit-animation: fadeIn 2s;
+            animation: fadeIn 2s;
+  }
+  #index #jason-title {
+    font-size: 40px;
+  }
+  #index #jason-title .em-partying_face {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  #index .shapes {
+    width: 150px;
+  }
+  #index .shapes:nth-child(2) {
+    top: 5%;
+    left: 4%;
+  }
+  #index .shapes:nth-child(3) {
+    top: -2%;
+    left: 37%;
+  }
+  #index .shapes:nth-child(4) {
+    top: 10%;
+    left: 65%;
+  }
+  #index .shapes:nth-child(5) {
+    bottom: 14%;
+    left: 5%;
+  }
+  #index .shapes:nth-child(6) {
+    bottom: 2%;
+    left: 28%;
+  }
+  #index .shapes:nth-child(7) {
+    bottom: 12%;
+    right: 2%;
+  }
+  #index .shapes:nth-child(8) {
+    bottom: 30%;
+    right: -3%;
+  }
+  @-webkit-keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 1;
+    }
+  }
+  @keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  #index #mayor {
+    width: 280px;
+    height: 280px;
+  }
+  #index #jason-img {
+    width: 265px;
+    height: 265px;
+  }
+  #index .shapes {
+    width: 90px;
+  }
+  @-webkit-keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 280px;
+      height: 280px;
+      opacity: 1;
+    }
+  }
+  @keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 280px;
+      height: 280px;
+      opacity: 1;
+    }
   }
 }

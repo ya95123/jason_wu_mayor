@@ -7,6 +7,10 @@ $blue-third: #2EA9DF;
 $yellow: #EDD170;
 $brown: #C05640;
 
+$break-lg: 1440px;
+$break-pad: 1024px;
+$break-phone: 767px;
+$break-smallphone: 320px;
 
 * {
   margin: 0;
@@ -43,6 +47,7 @@ body {
   position: relative;
 
   .mayorBox {
+    max-width: 100%;
     position: absolute;
     z-index: 99;
     top: 50%;
@@ -90,6 +95,12 @@ body {
     font-size: 48px;
     font-weight: 500;
     letter-spacing: 2px;
+    animation: fadeIn 2.5s;
+
+    .em-partying_face {
+      width: 54px !important;
+      height: 54px !important;
+    }
   }
 
   .shapes {
@@ -193,5 +204,171 @@ body {
 
   100% {
     opacity: 1;
+  }
+}
+
+// pc 1440
+@media (max-width: $break-lg) {
+  #index {
+    .shapes {
+      width: 200px;
+    }
+  }
+}
+
+// pad 1024
+@media (max-width: $break-pad) {
+  #index {
+    .shapes {
+      width: 175px;
+
+      &:nth-child(2) {
+        top: 5%;
+        left: 14%;
+      }
+
+      &:nth-child(3) {
+        top: 0%;
+        left: 52%;
+      }
+
+      &:nth-child(4) {
+        top: 10%;
+        left: 75%;
+      }
+
+      &:nth-child(5) {
+        bottom: 14%;
+        left: 5%;
+      }
+
+      &:nth-child(6) {
+        bottom: 5%;
+        left: 26%;
+      }
+
+      &:nth-child(7) {
+        bottom: 7%;
+        right: 9%;
+      }
+
+      &:nth-child(8) {
+        bottom: 25%;
+        right: 15%;
+      }
+    }
+  }
+}
+
+// phone 767
+@media (max-width: $break-phone) {
+  #index {
+    #mayor {
+      width: 300px;
+      height: 300px;
+      animation: fadeIn 0.7s, mayorRotate 3.65s ease-in-out infinite;
+    }
+
+    #jason-img {
+      width: 285px;
+      height: 285px;
+      animation: fadeIn 2s;
+    }
+
+    #jason-title {
+      font-size: 40px;
+
+      .em-partying_face {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+
+    .shapes {
+      width: 150px;
+
+      &:nth-child(2) {
+        top: 5%;
+        left: 4%;
+      }
+
+      &:nth-child(3) {
+        top: -2%;
+        left: 37%;
+      }
+
+      &:nth-child(4) {
+        top: 10%;
+        left: 65%;
+      }
+
+      &:nth-child(5) {
+        bottom: 14%;
+        left: 5%;
+      }
+
+      &:nth-child(6) {
+        bottom: 2%;
+        left: 28%;
+      }
+
+      &:nth-child(7) {
+        bottom: 12%;
+        right: 2%;
+      }
+
+      &:nth-child(8) {
+        bottom: 30%;
+        right: -3%;
+      }
+    }
+  }
+
+  @keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 1;
+    }
+  }
+}
+
+// smallphone 320
+@media (max-width: $break-smallphone) {
+  #index {
+    #mayor {
+      width: 280px;
+      height: 280px;
+    }
+
+
+    #jason-img {
+      width: 265px;
+      height: 265px;
+    }
+
+    .shapes {
+      width: 90px;
+    }
+  }
+
+  @keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    100% {
+      width: 280px;
+      height: 280px;
+      opacity: 1;
+    }
   }
 }
