@@ -360,9 +360,41 @@ img {
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   #index .shapes {
     width: 200px;
+  }
+  #index #mayor {
+    width: 425px;
+    height: 425px;
+  }
+  #index #jason-img {
+    width: 400px;
+    height: 400px;
+  }
+  @-webkit-keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 425px;
+      height: 425px;
+      opacity: 1;
+    }
+  }
+  @keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 425px;
+      height: 425px;
+      opacity: 1;
+    }
   }
 }
 

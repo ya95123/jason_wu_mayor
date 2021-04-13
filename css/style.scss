@@ -7,7 +7,7 @@ $blue-third: #2EA9DF;
 $yellow: #EDD170;
 $brown: #C05640;
 
-$break-lg: 1440px;
+$break-lg: 1600px;
 $break-pad: 1024px;
 $break-phone: 767px;
 $break-smallphone: 320px;
@@ -298,6 +298,31 @@ img {
   #index {
     .shapes {
       width: 200px;
+    }
+
+    #mayor {
+      width: 425px;
+      height: 425px;
+    }
+  
+  
+    #jason-img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  @keyframes mayorIn {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  
+    100% {
+      width: 425px;
+      height: 425px;
+      opacity: 1;
     }
   }
 }
