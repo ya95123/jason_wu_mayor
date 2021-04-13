@@ -78,36 +78,66 @@ const App = {
       }
     ])
 
+    let isPlay = ref(true)
+
+    const voice = () => {
+      isPlay = !isPlay.value
+      // *播放
+    }
+
     // 渲染完
     nextTick(() => {
       const cards = document.querySelectorAll(".card")
       const imgs = document.querySelectorAll(".card-img")
       const names = document.querySelectorAll(".name")
+      const contents = document.querySelectorAll(".card-content")
+      const backs = document.querySelectorAll(".back")
 
       // *card 
       cards.forEach((card, idx) => {
         let nameShow = true
 
         // *click 圖片消失
-        card.onclick = () => {
+        imgs[idx].onclick = () => {
           imgs[idx].classList.add("hide")
           nameShow = false
+
+          // 內容出現
+          contents[idx].classList.remove("none")
         }
 
         // *hover 名字出現
-        card.onmouseover = () => {
+        imgs[idx].onmouseover = () => {
           if (!nameShow) return
           names[idx].classList.remove("none")
         }
-        card.onmouseout = () => {
+        imgs[idx].onmouseout = () => {
           names[idx].classList.add("none")
         }
+
+        // *back
+        backs[idx].onclick = () => {
+          console.log(idx);
+          // 圖片回來
+          // imgs[idx].setAttribute("card-img")
+          imgs[idx].classList.remove("hide")
+          nameShow = true
+
+          // 內容消失
+          contents[idx].classList.add("none")
+        }
       })
+
+      // backs.forEach((back, idx) => {
+
+      // })
     })
 
     return {
       data,
       shapes,
+      isPlay,
+      voice,
     }
   }
 }

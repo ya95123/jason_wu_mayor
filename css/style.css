@@ -274,6 +274,8 @@ img {
   color: #C05640;
   text-align: justify;
   letter-spacing: 2px;
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
 }
 
 @-webkit-keyframes mayorIn {

@@ -40,20 +40,20 @@
       <div v-for="(item,idx) in data" :key="item.name" class="card">
         <!-- *封面 -->
         <!-- 照片 -->
-        <img class="card-img hide" :src="item.img">
+        <img class="card-img" :src="item.img">
         <!-- 名字 -->
         <span class="name none">{{item.name}}</span>
 
         <!-- *卡片內文 -->
-        <div class="card-content">
+        <div class="card-content none">
           <!-- *tool -->
           <section class="toolFrame">
             <!-- *上一頁 -->
-            <img class="tool" src="./img/tool/undo-alt-solid.svg" alt="上一頁">
+            <img class="tool back" src="./img/tool/undo-alt-solid.svg" alt="上一頁">
             <!-- *聲控 -->
             <div v-if="item.hasVoice">
-              <img v-if="holdPlay" class="tool" src="./img/tool/play-circle-solid.svg" alt="播放">
-              <img v-if="holdStop" class="tool" src="./img/tool/stop-circle-solid.svg" alt="暫停">
+              <img v-if="isPlay" class="tool play" @click="voice" src="./img/tool/play-circle-solid.svg" alt="播放">
+              <img v-if="!isPlay" class="tool" @click="voice" src="./img/tool/stop-circle-solid.svg" alt="暫停">
             </div>
           </section>
 
