@@ -30,50 +30,50 @@ const App = {
       {
         name: "A",
         img: "https://picsum.photos/800/1440/?random=1",
-        text: "",
-        hasVoice: "",
+        text: "檔案對手一陣恢復模樣彷彿文學一名鐵路，因而那個發出他還第一難以成就表情登陸遺憾，一項距離害怕原則汽車舉辦期待智能，自己的主要看過發表事務一時有效我市偉大根據如有，大賽到了下載地址指南土地同學十年順利適應將軍，還可以始終推坑王，由於而已建設教育於是笑着運行材料，留言板網易整個動力，靈活再說明星就會規模大家行動允許不要也可劇情遠程評分科技有限公司，激烈進口給你儘管藝術高校萬華定位三人居然查看財產降價結合，大連如有輔助注重閲讀意外自身持續，原來情人上帝姑娘論壇相同醫生所需生物明年大眾等級時候各自，說是幫你經營許可證，自然能源現實疾病演出必須進去，並在只要，我。",
+        hasVoice: true,
         voice: ""
       },
       {
         name: "B",
         img: "https://picsum.photos/1920/1080/?random=1",
         text: "",
-        hasVoice: "",
+        hasVoice: false,
         voice: ""
       },
       {
         name: "C",
         img: "https://picsum.photos/1440/768/?random=1",
         text: "",
-        hasVoice: "",
+        hasVoice: false,
         voice: ""
       },
       {
         name: "D",
         img: "https://picsum.photos/1920/1080/?random=2",
         text: "",
-        hasVoice: "",
+        hasVoice: false,
         voice: ""
       },
       {
         name: "E",
         img: "https://picsum.photos/1080/768/?random=2",
         text: "",
-        hasVoice: "",
+        hasVoice: false,
         voice: ""
       },
       {
         name: "F",
         img: "https://picsum.photos/768/1440/?random=1",
         text: "",
-        hasVoice: "",
+        hasVoice: false,
         voice: ""
       },
       {
         name: "G",
         img: "https://picsum.photos/1080/1920?random=1",
         text: "",
-        hasVoice: "",
+        hasVoice: false,
         voice: ""
       }
     ])
