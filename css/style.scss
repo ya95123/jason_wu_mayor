@@ -177,14 +177,19 @@ img {
   letter-spacing: 2px;
   break-inside: avoid;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
 
   .card-img {
-    transition: 0.3s;
+    transition: 0.5s;
 
     &:hover {
       opacity: 0.88;
     }
+  }
+
+  .hide {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .name {
@@ -296,6 +301,10 @@ img {
       }
     }
   }
+
+  #cards {
+    column-count: 2;
+  }
 }
 
 // phone 767
@@ -360,6 +369,10 @@ img {
         right: -3%;
       }
     }
+  }
+
+  #cards {
+    column-count: 1;
   }
 
   @keyframes mayorIn {

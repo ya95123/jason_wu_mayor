@@ -1,4 +1,4 @@
-const { ref, reactive, nextTick, onMounted } = Vue
+const { ref, reactive, nextTick } = Vue
 const App = {
   setup() {
     // shapes
@@ -77,6 +77,33 @@ const App = {
         voice: ""
       }
     ])
+
+    // 渲染完
+    nextTick(() => {
+      const cards = document.querySelectorAll(".card")
+      const imgs = document.querySelectorAll(".card-img")
+      const names = document.querySelectorAll(".name")
+
+      // *card 
+      cards.forEach((card, idx) => {
+        let nameShow = true
+
+        // *click 圖片消失
+        card.onclick = () => {
+          imgs[idx].classList.add("hide")
+          nameShow = false
+        }
+
+        // *hover 名字出現
+        card.onmouseover = () => {
+          if (!nameShow) return
+          names[idx].classList.remove("none")
+        }
+        card.onmouseout = () => {
+          names[idx].classList.add("none")
+        }
+      })
+    })
 
     return {
       data,
