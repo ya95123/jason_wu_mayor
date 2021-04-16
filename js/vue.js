@@ -186,7 +186,6 @@ const App = {
 
       // *card 
       cards.forEach((card, idx) => {
-        let nameShow = true
         let isOpen = false
         let toggleHeight = card.scrollHeight
 
@@ -200,6 +199,15 @@ const App = {
         })
         toggleObserver.observe(card)
 
+        // *hover 名字出現
+        imgs[idx].onmouseover = () => {
+          names[idx].classList.remove("none")
+        }
+        imgs[idx].onmouseout = () => {
+          names[idx].classList.add("none")
+        }
+
+        // TODO 分開寫迴圈
         // *click 圖片
         cardFronts[idx].onclick = () => {
           // 封面消失
@@ -207,38 +215,29 @@ const App = {
           // setTimeout(() => {
           cardFronts[idx].classList.add("none")
           // }, 500)
-          // 名字 hover 效果消失
-          // nameShow = false
 
           // 文字出現
           contents[idx].classList.remove("none")
 
           // 自適高度
           isOpen = true
-          isOpen ? card.style.height = `${toggleHeight}px` : card.style.height = "fit-content"
-        }
-
-        // *hover 名字出現
-        imgs[idx].onmouseover = () => {
-          if (!nameShow) return
-          names[idx].classList.remove("none")
-        }
-        imgs[idx].onmouseout = () => {
-          names[idx].classList.add("none")
+          card.style.height = `${toggleHeight}px`
+          // isOpen ? card.style.height = `${toggleHeight}px` : card.style.height = "fit-content"
         }
 
         // *back
         backs[idx].onclick = () => {
           console.log(idx);
           // 圖片回來
-          imgs[idx].classList.remove("img-hide")
-          nameShow = true
+          cardFronts[idx].classList.remove("hide-front")
+          cardFronts[idx].classList.remove("none")
 
           // 內容消失
           contents[idx].classList.add("none")
 
           // card
-          isOpen = false
+          // isOpen = false
+          card.style.height = `${toggleHeight}px`
         }
       })
     })
