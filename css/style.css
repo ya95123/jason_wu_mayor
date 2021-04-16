@@ -39,10 +39,6 @@ img {
   display: none !important;
 }
 
-.height {
-  height: auto;
-}
-
 #app {
   width: 100%;
   height: auto;
@@ -191,29 +187,34 @@ img {
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  letter-spacing: 2px;
   -webkit-column-break-inside: avoid;
           break-inside: avoid;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.card .card-img {
+.hide-front {
+  opacity: 0 !important;
+}
+
+.card-front {
+  width: 100%;
+  height: auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card-front .card-img {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
 }
 
-.card .card-img:hover {
+.card-front .card-img:hover {
   opacity: 0.88;
 }
 
-.card .hide {
-  opacity: 0 !important;
-  pointer-events: none;
-}
-
-.card .name {
+.card-front .name {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -225,6 +226,7 @@ img {
   border-bottom: 2px solid #fffd;
   text-shadow: 1px 1px 0px #fff;
   font-size: 40px;
+  letter-spacing: 2px;
   -webkit-animation: fadeIn 0.3s;
           animation: fadeIn 0.3s;
 }
@@ -233,9 +235,6 @@ img {
   width: 100%;
   height: 100%;
   padding: 4%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .card-content .toolFrame {
@@ -264,8 +263,7 @@ img {
 
 .card-content .text {
   width: 100%;
-  height: calc(100% - 20px);
-  padding: 3% 0;
+  padding: 3% 0 7% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

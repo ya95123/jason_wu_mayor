@@ -1,7 +1,7 @@
 const { ref, reactive, nextTick } = Vue
 const App = {
   setup() {
-    // shapes
+    // *shapes
     const shapes = reactive([
       {
         shape: "M66.3,-38.8C76.3,-21,68,6.7,53.9,28.6C39.9,50.4,19.9,66.3,-2.7,67.9C-25.3,69.5,-50.7,56.7,-61.6,36.7C-72.5,16.7,-68.9,-10.5,-56.3,-29.9C-43.6,-49.3,-21.8,-60.8,3.2,-62.6C28.2,-64.5,56.4,-56.6,66.3,-38.8Z"
@@ -25,7 +25,7 @@ const App = {
         shape: "M19.4,0.2C25.2,11.3,29.8,29.3,18.2,41.6C6.6,54,-21.1,60.6,-30.2,51.6C-39.3,42.6,-29.8,18,-21.7,3.6C-13.6,-10.9,-6.8,-15.1,0,-15.1C6.9,-15.1,13.7,-10.9,19.4,0.2Z"
       },
     ])
-    // cards data
+    // *cards data
     const data = reactive([
       {
         name: "宇德",
@@ -168,9 +168,8 @@ const App = {
         voice: ""
       },
     ])
-
+    // *voice
     let isPlay = ref(true)
-
     const voice = () => {
       isPlay = !isPlay.value
       // *播放
@@ -179,6 +178,7 @@ const App = {
     // 渲染完
     nextTick(() => {
       const cards = document.querySelectorAll(".card")
+      const cardFronts = document.querySelectorAll(".card-front")
       const imgs = document.querySelectorAll(".card-img")
       const names = document.querySelectorAll(".name")
       const contents = document.querySelectorAll(".card-content")
@@ -187,38 +187,35 @@ const App = {
       // *card 
       cards.forEach((card, idx) => {
         let nameShow = true
-        let isClick = false
-        let toggleHeight
+        let isOpen = false
+        let toggleHeight = card.scrollHeight
 
         // *監聽卡片變化
-        // const toggleObserver = new ResizeObserver(() => {
-        //   if (isClick) {
-        //     // 已打開，所以可以直接抓取 content 內的高度
-        //     toggleHeight = card.scrollHeight
-        //     card.style.height = `${toggleHeight}px`
-        //   }
-        // })
-        // toggleObserver.observe(card)
+        const toggleObserver = new ResizeObserver(() => {
+          if (isOpen) {
+            // 已打開，所以可以直接抓取 content 內的高度
+            toggleHeight = card.scrollHeight
+            card.style.height = `${toggleHeight}px`
+          }
+        })
+        toggleObserver.observe(card)
 
-        // *click 圖片消失
-        imgs[idx].onclick = () => {
-          imgs[idx].classList.add("hide")
-          nameShow = false
+        // *click 圖片
+        cardFronts[idx].onclick = () => {
+          // 封面消失
+          cardFronts[idx].classList.add("hide-front")
+          // setTimeout(() => {
+          cardFronts[idx].classList.add("none")
+          // }, 500)
+          // 名字 hover 效果消失
+          // nameShow = false
 
-          // 內容出現
+          // 文字出現
           contents[idx].classList.remove("none")
 
           // 自適高度
-          isClick = true
-          if(isClick){
-            toggleHeight = card.scrollHeight
-            card.style.height = `${toggleHeight+25}px`
-          }else{
-            card.style.height = "fit-content"
-          }
-
-
-          // card.style.height = `${toggleHeight}px`
+          isOpen = true
+          isOpen ? card.style.height = `${toggleHeight}px` : card.style.height = "fit-content"
         }
 
         // *hover 名字出現
@@ -234,15 +231,14 @@ const App = {
         backs[idx].onclick = () => {
           console.log(idx);
           // 圖片回來
-          // imgs[idx].setAttribute("card-img")
-          imgs[idx].classList.remove("hide")
+          imgs[idx].classList.remove("img-hide")
           nameShow = true
 
           // 內容消失
           contents[idx].classList.add("none")
 
           // card
-          isClick = false
+          isOpen = false
         }
       })
     })
