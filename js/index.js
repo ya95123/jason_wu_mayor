@@ -5,6 +5,9 @@ const names = document.querySelectorAll(".name")
 const contents = document.querySelectorAll(".card-content")
 const backs = document.querySelectorAll(".back")
 
+
+// TODO 字跟圖改成分開出現，不自動縮放了! 而且也會跑版
+
 // *card 
 cards.forEach((card, idx) => {
   let isObserve = false
