@@ -201,20 +201,22 @@ const App = {
     let speak = new Audio
     let lastSpeakIdx
     const voice = (idx) => {
-      // 獲取來源
+      if (!data[idx].hasVoice) return
+
+      // *獲取來源
       speak.src = data[idx].voice
 
       // *播放 / 結束 icon
+      // console.log(data[idx].isPlay)
+      // 該個 idx 更換 icon
       data[idx].isPlay = !data[idx].isPlay
+      // 上個 idx 更換 icon
       if (idx !== lastSpeakIdx && lastSpeakIdx !== undefined) {
-        // 上個 idx 更換 icon
         data[lastSpeakIdx].isPlay = !data[lastSpeakIdx].isPlay
-        // 上個 idx speak pause
-
       }
 
       // *紀錄上個音檔 idx
-      console.log(lastSpeakIdx)
+      // console.log(lastSpeakIdx)
       lastSpeakIdx = idx
 
       // *播放
@@ -224,79 +226,98 @@ const App = {
       }
       // *暫停
       speak.pause()
-
     }
 
     // 渲染完
-    nextTick(() => {
-      // const cards = document.querySelectorAll(".card")
-      // const cardFronts = document.querySelectorAll(".card-front")
-      // const imgs = document.querySelectorAll(".card-img")
-      // const names = document.querySelectorAll(".name")
-      // const contents = document.querySelectorAll(".card-content")
-      // const backs = document.querySelectorAll(".back")
+    // nextTick(() => {
+    //   const cards = document.querySelectorAll(".card")
+    //   const cardFronts = document.querySelectorAll(".card-front")
+    //   const imgs = document.querySelectorAll(".card-img")
+    //   const names = document.querySelectorAll(".name")
+    //   const contents = document.querySelectorAll(".card-content")
+    //   const backs = document.querySelectorAll(".back")
 
-      // // *card 
-      // cards.forEach((card, idx) => {
-      //   let isOpen = false
-      //   let imgHeight
-      //   let toggleHeight = card.scrollHeight
+    //   // *card 
+    //   cards.forEach((card, idx) => {
+    //     let isObserve = false
+    //     let target
+    //     let imgHeight
+    //     let toggleHeight = 0
 
-      //   // *hover 名字出現
-      //   // if (window.innerWidth > 1024) {
-      //   imgs[idx].onmouseover = () => {
-      //     names[idx].classList.remove("none")
-      //   }
-      //   imgs[idx].onmouseout = () => {
-      //     names[idx].classList.add("none")
-      //   }
-      //   // }
+    //     // *hover 名字出現
+    //     const hoverCard = () => {
+    //       if (window.innerWidth > 1024) {
+    //         imgs[idx].onmouseover = () => {
+    //           names[idx].classList.remove("none")
+    //         }
+    //         imgs[idx].onmouseout = () => {
+    //           names[idx].classList.add("none")
+    //         }
+    //       } else {
+    //         imgs[idx].onmouseover = () => {
+    //           return
+    //         }
+    //       }
+    //     }
+    //     hoverCard()
 
-      //   // *監聽卡片變化
-      //   const toggleObserver = new ResizeObserver(() => {
-      //     if (isOpen) {
-      //       // 已打開，所以可以直接抓取 content 內的高度
-      //       toggleHeight = card.scrollHeight
-      //       console.log(`auto：${toggleHeight}`);
-      //       card.style.height = `${toggleHeight}px`
-      //     }
-      //   })
-      //   toggleObserver.observe(card)
+    //     // *監聽大小變化
+    //     const toggleObserver = new ResizeObserver(() => {
+    //       // hover 隨螢幕大小變化
+    //       hoverCard()
 
-      //   // *click 圖片
-      //   cardFronts[idx].onclick = () => {
-      //     // 紀錄圖片高度
-      //     imgHeight = card.scrollHeight
-      //     console.log(imgHeight)
+    //       if (isObserve) {
+    //         // 已打開，所以可以直接抓取 content 內的高度
+    //         if (target === "text") {
+    //           toggleHeight = contents[idx].scrollHeight
+    //           card.style.height = `${toggleHeight}px`
+    //           // console.log(`auto1:${toggleHeight}`)
+    //           return
+    //         }
+    //         if (target === "img") {
+    //           toggleHeight = cardFronts[idx].scrollHeight
+    //           card.style.height = `${toggleHeight}px`
+    //           // console.log(`auto1:${toggleHeight}`)
+    //         }
+    //       }
+    //     })
+    //     toggleObserver.observe(card)
 
-      //     // 封面消失
-      //     cardFronts[idx].classList.add("none")
+    //     // *click 圖片
+    //     cardFronts[idx].onclick = () => {
 
-      //     // 文字出現
-      //     contents[idx].classList.remove("none")
+    //       // 紀錄圖片高度
+    //       imgHeight = imgs[idx].scrollHeight
 
-      //     // 自適高度
-      //     isOpen = true
-      //     console.log(`click：${toggleHeight}`);
-      //     card.style.height = `${toggleHeight}px`
-      //   }
+    //       // 封面消失
+    //       cardFronts[idx].classList.add("none")
 
-      //   // *back
-      //   backs[idx].onclick = () => {
-      //     // 圖片回來
-      //     console.log(`imgHeight：${imgHeight}`);
-      //     // cardFronts[idx].classList.remove("hide-front")
-      //     cardFronts[idx].classList.remove("none")
+    //       // 文字出現
+    //       contents[idx].classList.remove("none")
 
-      //     // 內容消失
-      //     contents[idx].classList.add("none")
+    //       // 自適高度
+    //       isObserve = true
+    //       target = "text"
+    //       toggleHeight = 0
+    //       card.style.height = `${toggleHeight}px`
+    //     }
 
-      //     // card
-      //     isOpen = false
-      //     card.style.height = `${imgHeight}px`
-      //   }
-      // })
-    })
+    //     // *back
+    //     backs[idx].onclick = () => {
+    //       // 圖片回來
+    //       // console.log(`imgHeight：${imgHeight}`);
+    //       cardFronts[idx].classList.remove("none")
+
+    //       // 內容消失
+    //       contents[idx].classList.add("none")
+
+    //       // card-img height
+    //       isObserve = true
+    //       target = "img"
+    //       card.style.height = `${imgHeight}px`
+    //     }
+    //   })
+    // })
 
     return {
       data,
