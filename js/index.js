@@ -11,7 +11,7 @@ const backs = document.querySelectorAll(".back")
 // *card 
 cards.forEach((card, idx) => {
   let isObserve = false
-  let taget
+  let target
   let imgHeight
   let toggleHeight = 0
 
