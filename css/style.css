@@ -26,12 +26,12 @@ img {
 }
 
 ::-moz-selection {
-  background: #fff;
+  background: #fffd;
   color: #C05640;
 }
 
 ::selection {
-  background: #fff;
+  background: #fffd;
   color: #C05640;
 }
 
@@ -123,15 +123,18 @@ img {
           animation: fadeIn 2.5s;
 }
 
-#index #jason-title .em-partying_face {
-  width: 54px !important;
-  height: 54px !important;
+#index #jason-title .celebrate {
+  margin: 4.5% auto 0 auto;
+  width: 54px;
+  height: 54px;
 }
 
 #index .shapes {
   width: 250px;
   max-width: 90%;
-  position: absolute;
+  position: fixed;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -webkit-animation: fadeIn 3.5s;
           animation: fadeIn 3.5s;
 }
@@ -172,7 +175,8 @@ img {
 }
 
 #cards {
-  width: 90%;
+  width: 1440px;
+  max-width: 90%;
   height: auto;
   margin: auto;
   padding: 3% 0;
@@ -267,7 +271,7 @@ img {
 
 .card-content .text {
   width: 100%;
-  padding: 3% 0 7% 0;
+  padding: 3% 0 3% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,6 +281,8 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-size: 20px;
   color: #C05640;
   text-align: justify;
@@ -285,8 +291,15 @@ img {
           animation: fadeIn 0.5s;
 }
 
-.card-content .text p {
+.card-content .text .content-text {
   white-space: pre-wrap;
+}
+
+.card-content .text .content-name {
+  width: 100%;
+  text-align: right;
+  color: #000;
+  line-height: 1.5;
 }
 
 @-webkit-keyframes mayorIn {
@@ -463,9 +476,9 @@ img {
   #index #jason-title {
     font-size: 40px;
   }
-  #index #jason-title .em-partying_face {
-    width: 40px !important;
-    height: 40px !important;
+  #index #jason-title .celebrate {
+    width: 40px;
+    height: 40px;
   }
   #index .shapes {
     width: 150px;

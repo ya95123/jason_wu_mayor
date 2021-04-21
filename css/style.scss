@@ -36,7 +36,7 @@ img {
 }
 
 ::selection {
-  background: #fff;
+  background: #fffd;
   color: $brown;
 }
 
@@ -111,16 +111,18 @@ img {
     letter-spacing: 2px;
     animation: fadeIn 2.5s;
 
-    .em-partying_face {
-      width: 54px !important;
-      height: 54px !important;
+    .celebrate {
+      margin: 4.5% auto 0 auto;
+      width: 54px;
+      height: 54px;
     }
   }
 
   .shapes {
     width: 250px;
     max-width: 90%;
-    position: absolute;
+    position: fixed;
+    transition: 0.5s;
     animation: fadeIn 3.5s;
 
     &:nth-child(2) {
@@ -161,7 +163,8 @@ img {
 }
 
 #cards {
-  width: 90%;
+  width: 1440px;
+  max-width: 90%;
   height: auto;
   margin: auto;
   padding: 3% 0;
@@ -242,10 +245,11 @@ img {
 
   .text {
     width: 100%;
-    padding: 3% 0 7% 0;
+    padding: 3% 0 3% 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     font-size: 20px;
     color: $brown;
@@ -253,8 +257,15 @@ img {
     letter-spacing: 2px;
     animation: fadeIn 0.5s;
 
-    p {
+    .content-text {
       white-space: pre-wrap;
+    }
+
+    .content-name {
+      width: 100%;
+      text-align: right;
+      color: #000;
+      line-height: 1.5;
     }
   }
 }
@@ -401,9 +412,9 @@ img {
     #jason-title {
       font-size: 40px;
 
-      .em-partying_face {
-        width: 40px !important;
-        height: 40px !important;
+      .celebrate {
+        width: 40px;
+        height: 40px;
       }
     }
 
