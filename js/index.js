@@ -11,30 +11,45 @@ const backs = document.querySelectorAll(".back")
 // *card 
 cards.forEach((card, idx) => {
   let isObserve = false
+  let taget
   let imgHeight
-  let toggleHeight = card.scrollHeight
+  let toggleHeight = 0
 
   // *hover 名字出現
-  // if (window.innerWidth > 1024) {
-  imgs[idx].onmouseover = () => {
-    names[idx].classList.remove("none")
+  const hoverCard = () => {
+    if (window.innerWidth > 1024) {
+      imgs[idx].onmouseover = () => {
+        names[idx].classList.remove("none")
+      }
+      imgs[idx].onmouseout = () => {
+        names[idx].classList.add("none")
+      }
+    } else {
+      imgs[idx].onmouseover = () => {
+        return
+      }
+    }
   }
-  imgs[idx].onmouseout = () => {
-    names[idx].classList.add("none")
-  }
-  // }
+  hoverCard()
 
-  // *監聽卡片變化
+  // *監聽大小變化
   const toggleObserver = new ResizeObserver(() => {
+    // hover 隨螢幕大小變化
+    hoverCard()
+
     if (isObserve) {
       // 已打開，所以可以直接抓取 content 內的高度
-      toggleHeight = card.scrollHeight
-
-      // 判斷擴張還是縮小
-      // toggleHeight > imgHeight? card.style.height = `${toggleHeight}px`
-
-      console.log(`auto：${toggleHeight}`);
-      card.style.height = `${toggleHeight}px`
+      if (target === "text") {
+        toggleHeight = contents[idx].scrollHeight
+        card.style.height = `${toggleHeight}px`
+        console.log(`auto1:${toggleHeight}`)
+        return
+      }
+      if (target === "img") {
+        toggleHeight = cardFronts[idx].scrollHeight
+        card.style.height = `${toggleHeight}px`
+        console.log(`auto1:${toggleHeight}`)
+      }
     }
   })
   toggleObserver.observe(card)
@@ -42,7 +57,7 @@ cards.forEach((card, idx) => {
   // *click 圖片
   cardFronts[idx].onclick = () => {
     // 紀錄圖片高度
-    imgHeight = card.scrollHeight
+    imgHeight = imgs[idx].scrollHeight
 
     // 封面消失
     cardFronts[idx].classList.add("none")
@@ -52,28 +67,23 @@ cards.forEach((card, idx) => {
 
     // 自適高度
     isObserve = true
+    target = "text"
     toggleHeight = 0
-    card.style.height = `0px`
-
-    // console.log(`click：${toggleHeight}`);
-    // card.style.height = `${toggleHeight}px`
+    card.style.height = `${toggleHeight}px`
   }
 
   // *back
   backs[idx].onclick = () => {
     // 圖片回來
     console.log(`imgHeight：${imgHeight}`);
-    // cardFronts[idx].classList.remove("hide-front")
     cardFronts[idx].classList.remove("none")
 
     // 內容消失
     contents[idx].classList.add("none")
 
-    // card
-    // isOpen = false
-    // toggleHeight = 0
-    card.style.height = `0px`
-
-    // card.style.height = `${imgHeight}px`
+    // card-img height
+    isObserve = true
+    target = "img"
+    card.style.height = `${imgHeight}px`
   }
 })
