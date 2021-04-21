@@ -54,8 +54,9 @@
             <img class="tool back" src="./img/tool/undo-alt-solid.svg" alt="上一頁">
             <!-- *聲控 -->
             <div v-if="item.hasVoice">
-              <img v-if="isPlay" class="tool play" @click="voice" src="./img/tool/play-circle-solid.svg" alt="播放">
-              <img v-if="!isPlay" class="tool" @click="voice" src="./img/tool/stop-circle-solid.svg" alt="暫停">
+              <img v-if="!item.isPlay" class="tool play" @click="voice(idx)" src="./img/tool/play-circle-solid.svg"
+                alt="播放">
+              <img v-if="item.isPlay" class="tool" @click="voice(idx)" src="./img/tool/stop-circle-solid.svg" alt="暫停">
             </div>
           </section>
 

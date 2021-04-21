@@ -252,6 +252,10 @@ img {
     text-align: justify;
     letter-spacing: 2px;
     animation: fadeIn 0.5s;
+
+    p {
+      white-space: pre-wrap;
+    }
   }
 }
 

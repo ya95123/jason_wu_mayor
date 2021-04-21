@@ -5,9 +5,6 @@ const names = document.querySelectorAll(".name")
 const contents = document.querySelectorAll(".card-content")
 const backs = document.querySelectorAll(".back")
 
-
-// TODO 字跟圖改成分開出現，不自動縮放了! 而且也會跑版
-
 // *card 
 cards.forEach((card, idx) => {
   let isObserve = false
@@ -42,13 +39,13 @@ cards.forEach((card, idx) => {
       if (target === "text") {
         toggleHeight = contents[idx].scrollHeight
         card.style.height = `${toggleHeight}px`
-        console.log(`auto1:${toggleHeight}`)
+        // console.log(`auto1:${toggleHeight}`)
         return
       }
       if (target === "img") {
         toggleHeight = cardFronts[idx].scrollHeight
         card.style.height = `${toggleHeight}px`
-        console.log(`auto1:${toggleHeight}`)
+        // console.log(`auto1:${toggleHeight}`)
       }
     }
   })
@@ -75,7 +72,7 @@ cards.forEach((card, idx) => {
   // *back
   backs[idx].onclick = () => {
     // 圖片回來
-    console.log(`imgHeight：${imgHeight}`);
+    // console.log(`imgHeight：${imgHeight}`);
     cardFronts[idx].classList.remove("none")
 
     // 內容消失

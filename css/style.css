@@ -285,6 +285,10 @@ img {
           animation: fadeIn 0.5s;
 }
 
+.card-content .text p {
+  white-space: pre-wrap;
+}
+
 @-webkit-keyframes mayorIn {
   0% {
     width: 0;
