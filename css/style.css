@@ -263,7 +263,7 @@ img {
   pointer-events: none;
   color: #A5DEE4;
   border-bottom: 2px solid #fffd;
-  text-shadow: 1px 1px 0px #fff;
+  text-shadow: 0px 0px 16px rgba(50, 88, 130, 0.32), 1px 1px 0 #fff;
   font-size: 40px;
   letter-spacing: 2px;
   -webkit-animation: fadeIn 0.3s;
