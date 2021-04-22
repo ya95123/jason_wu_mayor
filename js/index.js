@@ -4,6 +4,9 @@ const imgs = document.querySelectorAll(".card-img")
 const names = document.querySelectorAll(".name")
 const contents = document.querySelectorAll(".card-content")
 const backs = document.querySelectorAll(".back")
+const scene = document.getElementById("scene")
+
+let parallaxInstance = new Parallax(scene);
 
 // *card 
 cards.forEach((card, idx) => {

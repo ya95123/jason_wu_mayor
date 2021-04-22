@@ -12,13 +12,22 @@
 
 <body>
   <div id="app">
+    <!-- *場景 -->
+    <section id="scene">
+      <!-- shape -->
+      <svg v-for="(item,idx) in shapes" :key="item.color" class="shapes" viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg" :data-depth="item.depth">
+        <path fill="#F2F4F899" :d="item.shape" transform="translate(100 100)" />
+      </svg>
+    </section>
+
     <!-- *首頁 -->
     <section id="index">
       <div class="mayorBox">
         <!-- 圖 -->
         <div id="mayor">
           <div id="jason-img">
-            <img src="./img/jason.jpg">
+            <img src="./img/jason.jp">
           </div>
         </div>
         <!-- 名 -->
@@ -27,12 +36,6 @@
           <img class="celebrate" src="./img/celebrate.png">
         </div>
       </div>
-
-      <!-- shape -->
-      <svg v-for="(item,idx) in shapes" :key="item.color" class="shapes" viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill="#F2F4F899" :d="item.shape" transform="translate(100 100)" />
-      </svg>
     </section>
 
     <!-- *卡片 -->
@@ -70,6 +73,7 @@
     </section>
   </div>
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="./js/vue.js"></script>
   <script src="./js/index.js"></script>
 </body>

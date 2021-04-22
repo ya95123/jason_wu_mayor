@@ -51,6 +51,64 @@ img {
   overflow-x: hidden;
 }
 
+#scene {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+
+#scene .shapes {
+  width: 250px;
+  max-width: 90%;
+  position: absolute;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: fadeIn 3.5s;
+          animation: fadeIn 3.5s;
+}
+
+#scene .shapes:nth-child(1) {
+  top: 5% !important;
+  left: 14% !important;
+}
+
+#scene .shapes:nth-child(2) {
+  top: -2% !important;
+  left: 60% !important;
+}
+
+#scene .shapes:nth-child(3) {
+  top: 10% !important;
+  left: 83% !important;
+}
+
+#scene .shapes:nth-child(4) {
+  top: auto !important;
+  bottom: 14% !important;
+  left: 5% !important;
+}
+
+#scene .shapes:nth-child(5) {
+  top: auto !important;
+  bottom: 5% !important;
+  left: 26% !important;
+}
+
+#scene .shapes:nth-child(6) {
+  top: auto !important;
+  left: auto !important;
+  bottom: 7% !important;
+  right: 9% !important;
+}
+
+#scene .shapes:nth-child(7) {
+  top: auto !important;
+  left: auto !important;
+  bottom: 35% !important;
+  right: 19% !important;
+}
+
 #index {
   width: 100%;
   height: 100vh;
@@ -127,51 +185,6 @@ img {
   margin: 4.5% auto 0 auto;
   width: 54px;
   height: 54px;
-}
-
-#index .shapes {
-  width: 250px;
-  max-width: 90%;
-  position: fixed;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: fadeIn 3.5s;
-          animation: fadeIn 3.5s;
-}
-
-#index .shapes:nth-child(2) {
-  top: 5%;
-  left: 14%;
-}
-
-#index .shapes:nth-child(3) {
-  top: -2%;
-  left: 60%;
-}
-
-#index .shapes:nth-child(4) {
-  top: 10%;
-  left: 83%;
-}
-
-#index .shapes:nth-child(5) {
-  bottom: 14%;
-  left: 5%;
-}
-
-#index .shapes:nth-child(6) {
-  bottom: 5%;
-  left: 26%;
-}
-
-#index .shapes:nth-child(7) {
-  bottom: 7%;
-  right: 9%;
-}
-
-#index .shapes:nth-child(8) {
-  bottom: 35%;
-  right: 19%;
 }
 
 #cards {
@@ -385,7 +398,7 @@ img {
 }
 
 @media (max-width: 1600px) {
-  #index .shapes {
+  #scene .shapes {
     width: 200px;
   }
   #index #mayor {
@@ -423,36 +436,36 @@ img {
 }
 
 @media (max-width: 1024px) {
-  #index .shapes {
+  #scene .shapes {
     width: 175px;
   }
-  #index .shapes:nth-child(2) {
-    top: 5%;
-    left: 14%;
+  #scene .shapes:nth-child(1) {
+    top: 5% !important;
+    left: 14% !important;
   }
-  #index .shapes:nth-child(3) {
-    top: 0%;
-    left: 52%;
+  #scene .shapes:nth-child(2) {
+    top: 0% !important;
+    left: 52% !important;
   }
-  #index .shapes:nth-child(4) {
-    top: 10%;
-    left: 75%;
+  #scene .shapes:nth-child(3) {
+    top: 10% !important;
+    left: 75% !important;
   }
-  #index .shapes:nth-child(5) {
-    bottom: 14%;
-    left: 5%;
+  #scene .shapes:nth-child(4) {
+    bottom: 14% !important;
+    left: 5% !important;
   }
-  #index .shapes:nth-child(6) {
-    bottom: 5%;
-    left: 26%;
+  #scene .shapes:nth-child(5) {
+    bottom: 5% !important;
+    left: 26% !important;
   }
-  #index .shapes:nth-child(7) {
-    bottom: 7%;
-    right: 9%;
+  #scene .shapes:nth-child(6) {
+    bottom: 7% !important;
+    right: 9% !important;
   }
-  #index .shapes:nth-child(8) {
-    bottom: 25%;
-    right: 15%;
+  #scene .shapes:nth-child(7) {
+    bottom: 25% !important;
+    right: 15% !important;
   }
   #cards {
     -webkit-column-count: 2;
@@ -461,6 +474,37 @@ img {
 }
 
 @media (max-width: 767px) {
+  #scene .shapes {
+    width: 150px;
+  }
+  #scene .shapes:nth-child(1) {
+    top: 5% !important;
+    left: 4% !important;
+  }
+  #scene .shapes:nth-child(2) {
+    top: -2% !important;
+    left: 37% !important;
+  }
+  #scene .shapes:nth-child(3) {
+    top: 10% !important;
+    left: 65% !important;
+  }
+  #scene .shapes:nth-child(4) {
+    bottom: 14% !important;
+    left: 5% !important;
+  }
+  #scene .shapes:nth-child(5) {
+    bottom: 2% !important;
+    left: 28% !important;
+  }
+  #scene .shapes:nth-child(6) {
+    bottom: 12% !important;
+    right: 2% !important;
+  }
+  #scene .shapes:nth-child(7) {
+    bottom: 30% !important;
+    right: -3% !important;
+  }
   #index #mayor {
     width: 300px;
     height: 300px;
@@ -479,37 +523,6 @@ img {
   #index #jason-title .celebrate {
     width: 40px;
     height: 40px;
-  }
-  #index .shapes {
-    width: 150px;
-  }
-  #index .shapes:nth-child(2) {
-    top: 5%;
-    left: 4%;
-  }
-  #index .shapes:nth-child(3) {
-    top: -2%;
-    left: 37%;
-  }
-  #index .shapes:nth-child(4) {
-    top: 10%;
-    left: 65%;
-  }
-  #index .shapes:nth-child(5) {
-    bottom: 14%;
-    left: 5%;
-  }
-  #index .shapes:nth-child(6) {
-    bottom: 2%;
-    left: 28%;
-  }
-  #index .shapes:nth-child(7) {
-    bottom: 12%;
-    right: 2%;
-  }
-  #index .shapes:nth-child(8) {
-    bottom: 30%;
-    right: -3%;
   }
   #cards {
     -webkit-column-count: 1;
@@ -545,6 +558,9 @@ img {
 }
 
 @media (max-width: 320px) {
+  #scene .shapes {
+    width: 90px;
+  }
   #index #mayor {
     width: 280px;
     height: 280px;
@@ -552,9 +568,6 @@ img {
   #index #jason-img {
     width: 265px;
     height: 265px;
-  }
-  #index .shapes {
-    width: 90px;
   }
   @-webkit-keyframes mayorIn {
     0% {
