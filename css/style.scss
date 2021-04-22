@@ -20,6 +20,26 @@ $break-smallphone: 320px;
   font-family: 'Noto Sans TC', sans-serif, 黑體-繁, Apple LiGothic Medium, PingFang, 微軟正黑體, Microsoft JhengHei, WenQuanYi Zen Hei, helvetica, Arial;
 }
 
+::selection {
+  background: #fffd;
+  color: $brown;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  // background: $yellow;
+  background-image: linear-gradient(to top, #f78ca0dd 0%, #f9748fdd 19%, #fd868cdd 60%, #fe9a8bdd 100%);
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 html,
 body {
   height: 100%;
@@ -33,11 +53,6 @@ img {
   width: 100%;
   display: block;
   object-fit: cover;
-}
-
-::selection {
-  background: #fffd;
-  color: $brown;
 }
 
 .none {
@@ -192,11 +207,12 @@ img {
   height: fit-content;
   margin: 0 auto 8% auto;
   background: #fffd;
-  border-radius: 4px;
+  border-radius: 24px;
   overflow: hidden;
   position: relative;
-  // break-inside: avoid;
   transition: 0.5s;
+  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+  // break-inside: avoid;
 }
 
 .hide-front {
@@ -411,6 +427,7 @@ img {
     // column-count: 2;
     .card {
       width: 45%;
+      box-shadow: 0px 10px 25px -5px rgba(50, 88, 130, 0.32);
     }
   }
 }
@@ -486,6 +503,7 @@ img {
 
     .card {
       width: 100%;
+      box-shadow: 0px 6px 15px -5px rgba(50, 88, 130, 0.32);
     }
   }
 
