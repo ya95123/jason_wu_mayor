@@ -181,11 +181,13 @@ img {
   height: auto;
   margin: auto;
   padding: 3% 0;
-  column-count: 3;
+  // column-count: 3;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
-  width: 95%;
+  width: 30%;
   max-width: 100%;
   height: fit-content;
   margin: 0 auto 8% auto;
@@ -193,7 +195,7 @@ img {
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  break-inside: avoid;
+  // break-inside: avoid;
   transition: 0.5s;
 }
 
@@ -264,7 +266,7 @@ img {
     align-items: center;
     flex-wrap: wrap;
 
-    font-size: 20px;
+    font-size: 18px;
     color: $brown;
     text-align: justify;
     letter-spacing: 2px;
@@ -405,7 +407,11 @@ img {
   }
 
   #cards {
-    column-count: 2;
+
+    // column-count: 2;
+    .card {
+      width: 45%;
+    }
   }
 }
 
@@ -476,7 +482,11 @@ img {
   }
 
   #cards {
-    column-count: 1;
+    // column-count: 1;
+
+    .card {
+      width: 100%;
+    }
   }
 
   .card-content {
