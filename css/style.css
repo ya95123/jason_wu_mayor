@@ -64,6 +64,12 @@ img {
   background: -webkit-gradient(linear, left top, left bottom, from(#A5DEE4), to(#2EA9DF));
   background: linear-gradient(to bottom, #A5DEE4, #2EA9DF);
   overflow-x: hidden;
+  -webkit-transition: background 2.5s 0.1s;
+  transition: background 2.5s 0.1s;
+}
+
+.bg-trans {
+  background: #EDD170 !important;
 }
 
 #scene {
@@ -439,7 +445,7 @@ img {
 
 #footer a {
   text-decoration: none;
-  color: #EDD170;
+  color: #fff;
 }
 
 @-webkit-keyframes mayorIn {

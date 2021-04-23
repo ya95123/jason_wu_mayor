@@ -204,7 +204,8 @@ const App = {
       },
     ])
     // *bottom title
-    const title = ref(null)
+    const title = ref (null)
+    const app = document.getElementById("app")
 
     // *voice
     let speak = new Audio
@@ -247,11 +248,9 @@ const App = {
     const run = (sheep) =>{
       sheep.target.classList.add("active")
       title.value.classList.remove("no-show")
+      app.classList.add("bg-trans")
     }
-
-    onMounted(()=>{
-      console.log(title.value);
-    })
+    console.log(app);
 
     return {
       data,
@@ -259,7 +258,7 @@ const App = {
       voice,
       voiceStart,
       run,
-      title
+      title,
     }
   }
 }
