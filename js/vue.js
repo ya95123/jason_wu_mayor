@@ -246,7 +246,6 @@ const App = {
     // *快跑跟隨
     const run = (sheep) =>{
       sheep.target.classList.toggle("active")
-      console.log(title.value);
       title.value.classList.toggle("no-show")
     }
 
