@@ -213,6 +213,8 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .card {
@@ -223,13 +225,13 @@ img {
   height: fit-content;
   margin: 0 auto 8% auto;
   background: #fffd;
+  -webkit-box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+          box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 24px;
   overflow: hidden;
   position: relative;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
-          box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
 }
 
 .hide-front {
@@ -261,10 +263,12 @@ img {
           transform: translate(-50%, -50%);
   display: inline-block;
   pointer-events: none;
-  color: #A5DEE4;
-  border-bottom: 2px solid #fffd;
-  text-shadow: 0px 0px 16px rgba(50, 88, 130, 0.32), 1px 1px 0 #fff;
+  color: #fffe;
+  text-shadow: 3px 3px 0 #C05640;
+  -webkit-filter: drop-shadow(3px 3px 3px #1116);
+          filter: drop-shadow(3px 3px 3px #1116);
   font-size: 40px;
+  font-weight: 700;
   letter-spacing: 2px;
   -webkit-animation: fadeIn 0.3s;
           animation: fadeIn 0.3s;
@@ -331,6 +335,64 @@ img {
   text-align: right;
   color: #000;
   line-height: 1.5;
+}
+
+#surprise {
+  width: 1440px;
+  height: 100vh;
+  max-width: 90%;
+  margin: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#surprise .field {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#surprise .active {
+  -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+          filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+  -webkit-animation: run 3s infinite;
+          animation: run 3s infinite;
+}
+
+#surprise .sheeps {
+  width: 77px;
+  margin: 0 250px 0 0;
+  display: inline-block;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+#surprise .sheeps:hover {
+  -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+          filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+}
+
+#surprise .church {
+  width: 150px;
+  display: inline-block;
+  -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+          filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
 }
 
 @-webkit-keyframes mayorIn {
@@ -412,6 +474,44 @@ img {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes run {
+  25% {
+    -webkit-transform: scaleX(-1) rotate(-5deg);
+            transform: scaleX(-1) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: scaleX(-1) rotate(5deg);
+            transform: scaleX(-1) rotate(5deg);
+  }
+  75% {
+    -webkit-transform: scaleX(-1) rotate(0deg);
+            transform: scaleX(-1) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: scaleX(-1) translateX(-250px);
+            transform: scaleX(-1) translateX(-250px);
+  }
+}
+
+@keyframes run {
+  25% {
+    -webkit-transform: scaleX(-1) rotate(-5deg);
+            transform: scaleX(-1) rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: scaleX(-1) rotate(5deg);
+            transform: scaleX(-1) rotate(5deg);
+  }
+  75% {
+    -webkit-transform: scaleX(-1) rotate(0deg);
+            transform: scaleX(-1) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: scaleX(-1) translateX(-250px);
+            transform: scaleX(-1) translateX(-250px);
   }
 }
 
@@ -551,6 +651,17 @@ img {
   .card-content .text {
     font-size: 16px;
   }
+  #surprise .active {
+    -webkit-animation: run 1.75s infinite;
+            animation: run 1.75s infinite;
+  }
+  #surprise .sheeps {
+    width: 72px;
+    margin: 0 70px 0 0;
+  }
+  #surprise .church {
+    width: 120px;
+  }
   @-webkit-keyframes mayorIn {
     0% {
       width: 0;
@@ -573,6 +684,42 @@ img {
       width: 300px;
       height: 300px;
       opacity: 1;
+    }
+  }
+  @-webkit-keyframes run {
+    25% {
+      -webkit-transform: scaleX(-1) rotate(-5deg);
+              transform: scaleX(-1) rotate(-5deg);
+    }
+    50% {
+      -webkit-transform: scaleX(-1) rotate(5deg);
+              transform: scaleX(-1) rotate(5deg);
+    }
+    75% {
+      -webkit-transform: scaleX(-1) rotate(0deg);
+              transform: scaleX(-1) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: scaleX(-1) translateX(-70px);
+              transform: scaleX(-1) translateX(-70px);
+    }
+  }
+  @keyframes run {
+    25% {
+      -webkit-transform: scaleX(-1) rotate(-5deg);
+              transform: scaleX(-1) rotate(-5deg);
+    }
+    50% {
+      -webkit-transform: scaleX(-1) rotate(5deg);
+              transform: scaleX(-1) rotate(5deg);
+    }
+    75% {
+      -webkit-transform: scaleX(-1) rotate(0deg);
+              transform: scaleX(-1) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: scaleX(-1) translateX(-70px);
+              transform: scaleX(-1) translateX(-70px);
     }
   }
 }

@@ -199,6 +199,7 @@ img {
   // column-count: 3;
   display: flex;
   flex-wrap: wrap;
+  transition: 0.5s;
 }
 
 .card {
@@ -207,11 +208,11 @@ img {
   height: fit-content;
   margin: 0 auto 8% auto;
   background: #fffd;
+  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 24px;
   overflow: hidden;
   position: relative;
   transition: 0.5s;
-  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   // break-inside: avoid;
 }
 
@@ -240,12 +241,12 @@ img {
     transform: translate(-50%, -50%);
     display: inline-block;
     pointer-events: none;
+    color: #fffe;
+    text-shadow: 3px 3px 0 #C05640;
 
-    color: $blue-second;
-    border-bottom: 2px solid #fffd;
-    // text-shadow: 1px 1px 0 #fff;
-    text-shadow: 0px 0px 16px rgba(50, 88, 130, 0.32), 1px 1px 0 #fff;
+    filter: drop-shadow(3px 3px 3px #1116);
     font-size: 40px;
+    font-weight: 700;
     letter-spacing: 2px;
     animation: fadeIn 0.3s;
   }
@@ -302,6 +303,46 @@ img {
   }
 }
 
+#surprise{
+  width: 1440px;
+  height: 100vh;
+  max-width: 90%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+  .field{
+    width: fit-content;
+  }
+
+  .active{
+    filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+    animation: run 3s infinite;
+  }
+
+  .sheeps{
+    width: 77px;
+    margin: 0 250px 0 0;
+    display: inline-block;
+    transform: scaleX(-1);
+    transition: filter 0.5s;
+    cursor: grab;
+
+    &:hover{
+      filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+    }
+  }
+
+  .church{
+    width: 150px;
+    display: inline-block;
+    filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+  }
+}
+
 @keyframes mayorIn {
   0% {
     width: 0;
@@ -341,6 +382,24 @@ img {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes run {
+  25%{
+    transform: scaleX(-1) rotate(-5deg);
+  }
+
+  50%{
+    transform: scaleX(-1) rotate(5deg);
+  }
+
+  75%{
+    transform: scaleX(-1) rotate(0deg);
+  }
+
+  100%{
+    transform: scaleX(-1) translateX(-250px);
   }
 }
 
@@ -514,6 +573,21 @@ img {
     }
   }
 
+  #surprise{
+    .active{
+      animation: run 1.75s infinite;
+    }
+
+    .sheeps{
+      width: 72px;
+      margin: 0 70px 0 0;
+    }
+  
+    .church{
+      width: 120px;
+    }
+  }
+
   @keyframes mayorIn {
     0% {
       width: 0;
@@ -525,6 +599,24 @@ img {
       width: 300px;
       height: 300px;
       opacity: 1;
+    }
+  }
+
+  @keyframes run {
+    25%{
+      transform: scaleX(-1) rotate(-5deg);
+    }
+  
+    50%{
+      transform: scaleX(-1) rotate(5deg);
+    }
+  
+    75%{
+      transform: scaleX(-1) rotate(0deg);
+    }
+  
+    100%{
+      transform: scaleX(-1) translateX(-70px);
     }
   }
 }
