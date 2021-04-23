@@ -1,4 +1,4 @@
-const { ref, reactive } = Vue
+const { ref, reactive , onMounted } = Vue
 const App = {
   setup() {
     // *shapes
@@ -203,6 +203,8 @@ const App = {
         voice: "",
       },
     ])
+    // *bottom title
+    const title = ref(null)
 
     // *voice
     let speak = new Audio
@@ -241,11 +243,24 @@ const App = {
       voice(idx)
     }
 
+    // *快跑跟隨
+    const run = (sheep) =>{
+      sheep.target.classList.toggle("active")
+      console.log(title.value);
+      title.value.classList.toggle("no-show")
+    }
+
+    onMounted(()=>{
+      console.log(title.value);
+    })
+
     return {
       data,
       shapes,
       voice,
-      voiceStart
+      voiceStart,
+      run,
+      title
     }
   }
 }

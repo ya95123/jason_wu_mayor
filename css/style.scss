@@ -303,7 +303,7 @@ img {
   }
 }
 
-#surprise{
+#surprise {
   width: 1440px;
   height: 100vh;
   max-width: 90%;
@@ -314,16 +314,17 @@ img {
   align-items: center;
   transition: 0.5s;
 
-  .field{
+  .field {
     width: fit-content;
+    position: relative;
   }
 
-  .active{
+  .active {
     filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
-    animation: run 3s infinite;
+    animation: run 2.75s infinite;
   }
 
-  .sheeps{
+  .sheep {
     width: 77px;
     margin: 0 250px 0 0;
     display: inline-block;
@@ -336,10 +337,24 @@ img {
     }
   }
 
-  .church{
+  .church {
     width: 150px;
     display: inline-block;
     filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+  }
+
+  .title {
+    color: #fff9;
+    font-size: 38px;
+    font-weight: 450;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%) skew(-15deg);
+    opacity: 1;
+    pointer-events: none;
+    transition: 0.5s;
   }
 }
 
@@ -578,13 +593,17 @@ img {
       animation: run 1.75s infinite;
     }
 
-    .sheeps{
+    .sheep{
       width: 72px;
       margin: 0 70px 0 0;
     }
   
     .church{
       width: 120px;
+    }
+
+    .title {
+      font-size: 20px;
     }
   }
 

@@ -360,16 +360,17 @@ img {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
 }
 
 #surprise .active {
   -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
           filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
-  -webkit-animation: run 3s infinite;
-          animation: run 3s infinite;
+  -webkit-animation: run 2.75s infinite;
+          animation: run 2.75s infinite;
 }
 
-#surprise .sheeps {
+#surprise .sheep {
   width: 77px;
   margin: 0 250px 0 0;
   display: inline-block;
@@ -383,7 +384,7 @@ img {
   cursor: grab;
 }
 
-#surprise .sheeps:hover {
+#surprise .sheep:hover {
   -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
           filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
 }
@@ -393,6 +394,22 @@ img {
   display: inline-block;
   -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
           filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+}
+
+#surprise .title {
+  color: #fff9;
+  font-size: 38px;
+  font-weight: 450;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) skew(-15deg);
+          transform: translateX(-50%) skew(-15deg);
+  opacity: 1;
+  pointer-events: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 @-webkit-keyframes mayorIn {
@@ -655,12 +672,15 @@ img {
     -webkit-animation: run 1.75s infinite;
             animation: run 1.75s infinite;
   }
-  #surprise .sheeps {
+  #surprise .sheep {
     width: 72px;
     margin: 0 70px 0 0;
   }
   #surprise .church {
     width: 120px;
+  }
+  #surprise .title {
+    font-size: 20px;
   }
   @-webkit-keyframes mayorIn {
     0% {
