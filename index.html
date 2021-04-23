@@ -41,7 +41,7 @@
     <section id="cards">
       <div v-for="(item,idx) in data" :key="item.name" class="card">
         <!-- *封面 -->
-        <div class="card-front" @click="voice(idx)">
+        <div class="card-front" @click="voiceStart(idx)">
           <!-- 照片 -->
           <img class="card-img" :src="item.img">
           <!-- 名字 -->
