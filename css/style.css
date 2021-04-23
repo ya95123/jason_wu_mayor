@@ -366,8 +366,8 @@ img {
 #surprise .active {
   -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
           filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
-  -webkit-animation: run 2.75s infinite;
-          animation: run 2.75s infinite;
+  -webkit-animation: run 2.35s infinite !important;
+          animation: run 2.35s infinite !important;
 }
 
 #surprise .sheep {
@@ -376,17 +376,19 @@ img {
   display: inline-block;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
+  cursor: -webkit-grab;
+  cursor: grab;
   -webkit-transition: -webkit-filter 0.5s;
   transition: -webkit-filter 0.5s;
   transition: filter 0.5s;
   transition: filter 0.5s, -webkit-filter 0.5s;
-  cursor: -webkit-grab;
-  cursor: grab;
+  -webkit-animation: sheep 1.25s infinite alternate;
+          animation: sheep 1.25s infinite alternate;
 }
 
 #surprise .sheep:hover {
-  -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
-          filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+  -webkit-filter: drop-shadow(0 0 7px rgba(255, 240, 191, 0.7)) !important;
+          filter: drop-shadow(0 0 7px rgba(255, 240, 191, 0.7)) !important;
 }
 
 #surprise .church {
@@ -408,8 +410,29 @@ img {
           transform: translateX(-50%) skew(-15deg);
   opacity: 1;
   pointer-events: none;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 1.3s;
+  transition: 1.3s;
+}
+
+#footer {
+  width: 100%;
+  padding: 48px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+#footer img {
+  width: 18px;
+  margin: 0 3px 0;
+  display: inline-block;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #EDD170;
 }
 
 @-webkit-keyframes mayorIn {
@@ -491,6 +514,28 @@ img {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes sheep {
+  50% {
+    -webkit-transform: scaleX(-1.045) scaleY(1.045) rotate(-2deg);
+            transform: scaleX(-1.045) scaleY(1.045) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: scaleX(-1) scaleY(1) rotate(4deg);
+            transform: scaleX(-1) scaleY(1) rotate(4deg);
+  }
+}
+
+@keyframes sheep {
+  50% {
+    -webkit-transform: scaleX(-1.045) scaleY(1.045) rotate(-2deg);
+            transform: scaleX(-1.045) scaleY(1.045) rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: scaleX(-1) scaleY(1) rotate(4deg);
+            transform: scaleX(-1) scaleY(1) rotate(4deg);
   }
 }
 
@@ -681,6 +726,13 @@ img {
   }
   #surprise .title {
     font-size: 20px;
+  }
+  #footer {
+    padding: 32px;
+    font-size: 12px;
+  }
+  #footer img {
+    width: 16px;
   }
   @-webkit-keyframes mayorIn {
     0% {
