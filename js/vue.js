@@ -245,8 +245,8 @@ const App = {
 
     // *快跑跟隨
     const run = (sheep) =>{
-      sheep.target.classList.toggle("active")
-      title.value.classList.toggle("no-show")
+      sheep.target.classList.add("active")
+      title.value.classList.remove("no-show")
     }
 
     onMounted(()=>{

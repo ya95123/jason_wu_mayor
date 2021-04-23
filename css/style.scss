@@ -336,12 +336,17 @@ img {
     &:hover{
       filter: drop-shadow(0 0 7px rgba(255, 240, 191, 0.7)) !important;
     }
+
+    &:active{
+      cursor: grabbing;
+    }
   }
 
   .church {
     width: 150px;
     display: inline-block;
     filter: drop-shadow(0px 0px 7px rgba(255, 240, 191, 0.7));
+    cursor: grabbing;
   }
 
   .title {
