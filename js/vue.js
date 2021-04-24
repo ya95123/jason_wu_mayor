@@ -157,7 +157,7 @@ const App = {
       {
         name: "雅暄",
         img: "./img/personal/M.jpg",
-        text: "神最愛的寶貝 俊昇兒子\n恭喜你~~~~~!\n按立區長\n相信神在你身上安排好一切，\n就是帶給更多人喜悅及愛神的先峰\n讓你播下愛的種子，\n在每一個不認識神的心中\n神喜悅之事  就是讓祂的子女們能彼此相愛扶持，\n祂\n恭喜你!!!!!🎉🎉🎉🎉🎉",
+        text: "神最愛的寶貝 俊昇兒子\n恭喜你~~~~~!\n按立區長\n相信神在你身上安排好一切，\n就是帶給更多人喜悅及愛神的先峰\n讓你播下愛的種子，\n在每一個不認識神的心中\n神喜悅之事  就是讓祂的子女們能彼此相愛扶持，\n因而倚靠著祂\n恭喜你!!!!!🎉🎉🎉🎉🎉",
         hasVoice: false,
         isPlay: false,
         voice: "",
@@ -250,7 +250,6 @@ const App = {
       title.value.classList.remove("no-show")
       app.classList.add("bg-trans")
     }
-    console.log(app);
 
     return {
       data,
