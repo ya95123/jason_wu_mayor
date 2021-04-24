@@ -257,7 +257,7 @@ const App = {
       voice,
       voiceStart,
       run,
-      title,
+      title
     }
   }
 }
